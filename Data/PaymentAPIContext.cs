@@ -15,10 +15,12 @@ namespace PaymentAPI.Data
         }
 
         public DbSet<UserModel> Users {get; set;}
+        public DbSet<AccountModel> Account {get; set;}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserMap());
+            modelBuilder.ApplyConfiguration(new AccountMap());
             base.OnModelCreating(modelBuilder);
         }
     }
